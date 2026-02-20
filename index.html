@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TutorMatch — Профессиональный подбор репетиторов</title>
+  <meta name="description" content="TutorMatch помогает быстро подобрать проверенного репетитора под цели, уровень и бюджет." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="#">
+        <span class="logo-mark">TM</span>
+        <span class="logo-text">TutorMatch</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#tutors">Репетиторы</a>
+        <a href="#how">Как это работает</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a class="btn btn-outline" href="#request">Подобрать репетитора</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="chip">Платформа №1 для осознанного обучения</p>
+          <h1>Профессиональный подбор репетиторов под вашу цель</h1>
+          <p class="hero-subtitle">
+            Подберём преподавателя за 15 минут: по предмету, формату, бюджету и желаемому результату.
+            Только проверенные репетиторы с реальными отзывами.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#request">Оставить заявку</a>
+            <a class="btn btn-light" href="#tutors">Смотреть репетиторов</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>4 800+</strong><span>репетиторов в базе</span></li>
+            <li><strong>98%</strong><span>довольных учеников</span></li>
+            <li><strong>24/7</strong><span>поддержка менеджеров</span></li>
+          </ul>
+        </div>
+        <aside class="hero-card" id="request">
+          <h2>Быстрая заявка</h2>
+          <p>Расскажите о задаче — и мы предложим лучших кандидатов.</p>
+          <form class="request-form" id="requestForm">
+            <label>
+              Предмет
+              <select name="subject" required>
+                <option value="">Выберите предмет</option>
+                <option>Математика</option>
+                <option>Английский язык</option>
+                <option>Физика</option>
+                <option>Русский язык</option>
+                <option>Программирование</option>
+              </select>
+            </label>
+            <label>
+              Цель занятий
+              <input type="text" name="goal" placeholder="ЕГЭ, повышение уровня, олимпиада" required />
+            </label>
+            <label>
+              Телефон или Telegram
+              <input type="text" name="contact" placeholder="+7 (___) ___-__-__" required />
+            </label>
+            <button class="btn btn-full" type="submit">Получить подборку</button>
+            <p class="form-note" id="formMessage" aria-live="polite"></p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="tutors">
+      <div class="container">
+        <div class="section-head">
+          <h2>Подходящие репетиторы</h2>
+          <p>Используйте фильтры и найдите преподавателя под ваши задачи.</p>
+        </div>
+        <div class="filters">
+          <select id="subjectFilter">
+            <option value="all">Все предметы</option>
+            <option value="math">Математика</option>
+            <option value="english">Английский язык</option>
+            <option value="physics">Физика</option>
+            <option value="programming">Программирование</option>
+          </select>
+          <select id="priceFilter">
+            <option value="all">Любой бюджет</option>
+            <option value="low">До 1500 ₽</option>
+            <option value="mid">1500–2500 ₽</option>
+            <option value="high">От 2500 ₽</option>
+          </select>
+          <select id="formatFilter">
+            <option value="all">Любой формат</option>
+            <option value="online">Онлайн</option>
+            <option value="offline">Офлайн</option>
+            <option value="hybrid">Гибрид</option>
+          </select>
+        </div>
+
+        <div class="tutor-grid" id="tutorGrid">
+          <article class="tutor-card" data-subject="math" data-price="mid" data-format="online">
+            <h3>Анна Кравцова</h3>
+            <p class="meta">Математика • 7 лет опыта • ЕГЭ/ОГЭ</p>
+            <p>Средний балл учеников на ЕГЭ: 86. Помогает системно закрыть пробелы и выйти на высокий результат.</p>
+            <div class="tutor-footer"><span>1800 ₽ / 60 мин</span><button>Записаться</button></div>
+          </article>
+          <article class="tutor-card" data-subject="english" data-price="high" data-format="hybrid">
+            <h3>Илья Новиков</h3>
+            <p class="meta">Английский • 10 лет опыта • IELTS/Business</p>
+            <p>Готовит к международным экзаменам и собеседованиям. Индивидуальная программа под цель студента.</p>
+            <div class="tutor-footer"><span>2700 ₽ / 60 мин</span><button>Записаться</button></div>
+          </article>
+          <article class="tutor-card" data-subject="physics" data-price="mid" data-format="online">
+            <h3>Мария Леонова</h3>
+            <p class="meta">Физика • 6 лет опыта • Олимпиады</p>
+            <p>Понятно объясняет сложные темы, готовит к олимпиадам и поступлению в технические вузы.</p>
+            <div class="tutor-footer"><span>2000 ₽ / 60 мин</span><button>Записаться</button></div>
+          </article>
+          <article class="tutor-card" data-subject="programming" data-price="low" data-format="online">
+            <h3>Денис Рябов</h3>
+            <p class="meta">Программирование • 5 лет опыта • Python/JS</p>
+            <p>Обучает с нуля до первых проектов. Подходит школьникам, студентам и взрослым специалистам.</p>
+            <div class="tutor-footer"><span>1400 ₽ / 60 мин</span><button>Записаться</button></div>
+          </article>
+          <article class="tutor-card" data-subject="math" data-price="high" data-format="offline">
+            <h3>Екатерина Власова</h3>
+            <p class="meta">Математика • 12 лет опыта • Профильный уровень</p>
+            <p>Работает на результат с интенсивной программой: диагностика, план, контроль прогресса.</p>
+            <div class="tutor-footer"><span>3000 ₽ / 60 мин</span><button>Записаться</button></div>
+          </article>
+          <article class="tutor-card" data-subject="english" data-price="low" data-format="online">
+            <h3>Софья Гончар</h3>
+            <p class="meta">Английский • 4 года опыта • Школьная программа</p>
+            <p>Помогает поднять успеваемость и уверенность в языке через регулярную практику и разговорные занятия.</p>
+            <div class="tutor-footer"><span>1300 ₽ / 60 мин</span><button>Записаться</button></div>
+          </article>
+        </div>
+        <p id="emptyState" class="empty-state" hidden>По выбранным фильтрам пока нет результатов. Попробуйте изменить параметры.</p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>Как работает TutorMatch</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3>Оставляете заявку</h3>
+            <p>Указываете предмет, уровень, формат и бюджет.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Получаете подборку</h3>
+            <p>Менеджер присылает 3–5 релевантных репетиторов с рекомендациями.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Пробное занятие</h3>
+            <p>Проводите вводный урок и выбираете подходящего преподавателя.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Отзывы клиентов</h2>
+        </div>
+        <div class="reviews">
+          <blockquote>«За 3 месяца сын подтянул математику с 3 до стабильной 5. Подбор был точным с первого раза.»<cite>— Ольга, мама ученика 9 класса</cite></blockquote>
+          <blockquote>«Подготовилась к IELTS на 7.5. Очень удобно, что менеджер ведёт и помогает на всех этапах.»<cite>— Дарья, студентка</cite></blockquote>
+          <blockquote>«Нашёл преподавателя по Python для смены профессии. Уже через 2 месяца сделал первые проекты.»<cite>— Алексей, junior developer</cite></blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">
+          <span class="logo-mark">TM</span>
+          <span class="logo-text">TutorMatch</span>
+        </a>
+        <p>Подбираем репетиторов по всей России и СНГ в онлайн и офлайн форматах.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>+7 (999) 123-45-67</li>
+          <li>hello@tutormatch.ru</li>
+          <li>Telegram: @tutormatch</li>
+        </ul>
+      </div>
+      <div>
+        <h4>График</h4>
+        <ul>
+          <li>Пн–Пт: 09:00–21:00</li>
+          <li>Сб–Вс: 10:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
